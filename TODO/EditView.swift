@@ -1,5 +1,5 @@
 //
-//  SecondView.swift
+//  EditView.swift
 //  TODO
 //
 //  Created by Marcus Mertilien on 3/7/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class List: UITableViewController{
+class EditView: UITableViewController{
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -18,3 +18,4 @@ class List: UITableViewController{
         super.didReceiveMemoryWarning()
     }
 }
+
