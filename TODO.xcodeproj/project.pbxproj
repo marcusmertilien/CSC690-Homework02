@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		F81662A1204FB545002E5ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81662A0204FB545002E5ECF /* AppDelegate.swift */; };
-		F81662A3204FB545002E5ECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81662A2204FB545002E5ECF /* ViewController.swift */; };
+		F81662A3204FB545002E5ECF /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81662A2204FB545002E5ECF /* FirstView.swift */; };
 		F81662A6204FB545002E5ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81662A4204FB545002E5ECF /* Main.storyboard */; };
 		F81662A8204FB545002E5ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F81662A7204FB545002E5ECF /* Assets.xcassets */; };
 		F81662AB204FB545002E5ECF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81662A9204FB545002E5ECF /* LaunchScreen.storyboard */; };
 		F81662B6204FB546002E5ECF /* TODOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81662B5204FB546002E5ECF /* TODOTests.swift */; };
 		F81662C1204FB546002E5ECF /* TODOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81662C0204FB546002E5ECF /* TODOUITests.swift */; };
+		F81662CF2050BA60002E5ECF /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81662CE2050BA60002E5ECF /* SecondView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		F816629D204FB545002E5ECF /* TODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81662A0204FB545002E5ECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F81662A2204FB545002E5ECF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F81662A2204FB545002E5ECF /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		F81662A5204FB545002E5ECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F81662A7204FB545002E5ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F81662AA204FB545002E5ECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		F81662BC204FB546002E5ECF /* TODOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TODOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81662C0204FB546002E5ECF /* TODOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOUITests.swift; sourceTree = "<group>"; };
 		F81662C2204FB546002E5ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F81662CE2050BA60002E5ECF /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				F81662A0204FB545002E5ECF /* AppDelegate.swift */,
-				F81662A2204FB545002E5ECF /* ViewController.swift */,
+				F81662A2204FB545002E5ECF /* FirstView.swift */,
+				F81662CE2050BA60002E5ECF /* SecondView.swift */,
 				F81662A4204FB545002E5ECF /* Main.storyboard */,
 				F81662A7204FB545002E5ECF /* Assets.xcassets */,
 				F81662A9204FB545002E5ECF /* LaunchScreen.storyboard */,
@@ -259,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F81662A3204FB545002E5ECF /* ViewController.swift in Sources */,
+				F81662CF2050BA60002E5ECF /* SecondView.swift in Sources */,
+				F81662A3204FB545002E5ECF /* FirstView.swift in Sources */,
 				F81662A1204FB545002E5ECF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

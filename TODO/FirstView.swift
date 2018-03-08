@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstView: UIViewController {
 
+    @IBAction func goButton(_ sender: Any) {
+        performSegue(withIdentifier: "firstSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
