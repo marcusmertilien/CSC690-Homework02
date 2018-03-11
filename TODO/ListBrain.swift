@@ -8,17 +8,42 @@
 
 import Foundation
 
-//Structure for recording tasks
-struct task{
-    var info = "";
-    var completed = "0";
-}
+//Global Index Count
+private var indexCount = 0;
 
 //Array to hold list of tasks
-var list [];
+private var list = [Task] ()
 
-func addTask()
 
+//Structure for recording tasks
+struct Task{
+    
+    private var index = indexCount
+    
+    var info:String?
+    var completed:Bool?
+    
+    
+
+
+    mutating func addTask(obj: Task){
+        indexCount = indexCount + 1
+        list.append(obj)
+    }
+
+     func removeTask(obj: Task){
+        list.remove(at: obj.getItemIndex())
+    }
+
+    func getIndexCount()->Int{
+        return indexCount
+    }
+    
+    func getItemIndex()->{
+        return index
+    }
+    
+}
 
 
 

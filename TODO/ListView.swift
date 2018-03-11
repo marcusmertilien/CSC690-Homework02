@@ -8,7 +8,15 @@
 
 import UIKit
 
-class ListView: UIViewController {
+class ListView: UITableViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    
+    var list = [Task]()
+    
+    
     
     
     override func viewDidLoad() {

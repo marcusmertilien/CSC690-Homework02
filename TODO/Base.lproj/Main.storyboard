@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hlD-Yf-RyM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -68,9 +68,9 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Edit" width="376.5" id="h34-9a-Z1l">
+                                    <barButtonItem title="Edit" width="373.5" id="8Ph-Sw-vev">
                                         <connections>
-                                            <segue destination="p7G-iw-25Q" kind="presentation" id="Lvy-Tb-HgK"/>
+                                            <segue destination="p7G-iw-25Q" kind="show" id="uwi-Wl-rlL"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="605.60000000000002" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit View-->
         <scene sceneID="nxO-pR-Vk4">
             <objects>
-                <viewController id="p7G-iw-25Q" sceneMemberID="viewController">
+                <viewController id="p7G-iw-25Q" customClass="EditView" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5N6-5o-wWO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +102,11 @@
                                                 <segue destination="hlD-Yf-RyM" kind="show" id="uCw-3B-y3L"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="brG-JF-vPa"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="brG-JF-vPa">
+                                            <connections>
+                                                <action selector="Save:" destination="p7G-iw-25Q" id="cDQ-lY-7rg"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -119,15 +123,36 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="Save:" destination="p7G-iw-25Q" eventType="editingDidEnd" id="2Db-Eg-2NS"/>
+                                </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0a-38-eIr">
+                                <rect key="frame" x="16" y="198" width="94" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gL-bQ-c0h">
+                                <rect key="frame" x="163" y="217" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Save:" destination="p7G-iw-25Q" eventType="valueChanged" id="iAU-fS-V9L"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="czx-Hc-9eo"/>
                     </view>
+                    <connections>
+                        <outlet property="completition" destination="2gL-bQ-c0h" id="Biw-Qp-dCu"/>
+                        <outlet property="editInfo" destination="xNT-WB-UzN" id="bfT-I7-Rwh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsR-8i-QRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608.8" y="151.57421289355324"/>
+            <point key="canvasLocation" x="2089" y="133"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
