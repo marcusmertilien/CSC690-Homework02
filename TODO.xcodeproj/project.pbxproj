@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F81662A1204FB545002E5ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81662A0204FB545002E5ECF /* AppDelegate.swift */; };
-		F81662A3204FB545002E5ECF /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81662A2204FB545002E5ECF /* FirstView.swift */; };
 		F81662A6204FB545002E5ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81662A4204FB545002E5ECF /* Main.storyboard */; };
 		F81662A8204FB545002E5ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F81662A7204FB545002E5ECF /* Assets.xcassets */; };
 		F81662B6204FB546002E5ECF /* TODOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81662B5204FB546002E5ECF /* TODOTests.swift */; };
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		F816629D204FB545002E5ECF /* TODO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81662A0204FB545002E5ECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F81662A2204FB545002E5ECF /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		F81662A5204FB545002E5ECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F81662A7204FB545002E5ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F81662AC204FB545002E5ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				F81662A0204FB545002E5ECF /* AppDelegate.swift */,
-				F81662A2204FB545002E5ECF /* FirstView.swift */,
 				F855D0DB2050EED10063C4A4 /* ListView.swift */,
 				F81662D02050D2D1002E5ECF /* ListBrain.swift */,
 				F81662D22050D847002E5ECF /* EditView.swift */,
@@ -265,7 +262,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F81662D32050D847002E5ECF /* EditView.swift in Sources */,
-				F81662A3204FB545002E5ECF /* FirstView.swift in Sources */,
 				F855D0DC2050EED10063C4A4 /* ListView.swift in Sources */,
 				F81662A1204FB545002E5ECF /* AppDelegate.swift in Sources */,
 				F81662D12050D2D1002E5ECF /* ListBrain.swift in Sources */,

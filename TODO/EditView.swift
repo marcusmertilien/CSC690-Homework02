@@ -9,9 +9,10 @@
 import UIKit
 
 
-class EditView:UIViewController{//:UITableViewController{
+class EditView: UIViewController{//:UITableViewController{
     //var list = [Task]()
-    var temp = Task()
+    //var temp = Task()
+   
     override func viewDidLoad(){
         super.viewDidLoad()
     }
@@ -19,19 +20,16 @@ class EditView:UIViewController{//:UITableViewController{
     override func  didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+}
     
-    @IBAction func Save(_ sender: Any) {
-        weak var completition: UISwitch!
+    /*@IBAction func Save(_ sender: Any) {
+        //weak var completition: UISwitch!
         weak var editInfo: UITextField!
         
         temp.info = editInfo.text
-        temp.completed = completition.
-        
+        //temp.completed = completition.isOn
         //Task(info: "Hello", completed: 1, index: 0)
         temp.addTask(obj: temp)
         
-    }
-    
-    
-}
+    }*/
 

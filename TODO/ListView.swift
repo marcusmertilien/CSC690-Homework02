@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ListView: UITableViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
+class ListView: UIViewController {
+   // override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+   //     return 3
+    //}
     
     
     var list = [Task]()

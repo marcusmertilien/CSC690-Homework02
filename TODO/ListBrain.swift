@@ -39,7 +39,7 @@ struct Task{
         return indexCount
     }
     
-    func getItemIndex()->{
+    func getItemIndex()->Int{
         return index
     }
     
