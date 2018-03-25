@@ -15,35 +15,6 @@ private var indexCount = 0;
 private var list = [Task] ()
 
 
-//Structure for recording tasks
-struct Task{
-    
-    private var index = indexCount
-    
-    var info:String?
-    var completed:Bool?
-    
-    
-
-
-    mutating func addTask(obj: Task){
-        indexCount = indexCount + 1
-        list.append(obj)
-    }
-
-     func removeTask(obj: Task){
-        list.remove(at: obj.getItemIndex())
-    }
-
-    func getIndexCount()->Int{
-        return indexCount
-    }
-    
-    func getItemIndex()->Int{
-        return index
-    }
-    
-}
 
 
 

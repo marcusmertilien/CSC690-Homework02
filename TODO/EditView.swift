@@ -7,29 +7,62 @@
 //
 
 import UIKit
+import os.log
 
 
-class EditView: UIViewController{//:UITableViewController{
-    //var list = [Task]()
-    //var temp = Task()
-   
+class EditView: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    @IBOutlet weak var save: UIBarButtonItem!
+    @IBOutlet weak var textView: UITextView!
+    
+    var task: Task?
+    
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        if let task = task{
+            textView.text = task.info
+        }
     }
     
     override func  didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-}
     
-    /*@IBAction func Save(_ sender: Any) {
-        //weak var completition: UISwitch!
-        weak var editInfo: UITextField!
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        temp.info = editInfo.text
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard (sender as? UIBarButtonItem) != nil else {
+            os_log("Something unforseable has gone wrong", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let info = textView.text ?? ""
+        let status = false
+        
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        task = Task(info: info, status: status)
+    }
+
+    
+    @IBAction func Save(_ sender: Any) {
+        print("Hello World\n")
+        //weak var completition: UISwitch!
+       // weak var editInfo: UITextField!
+        
+        //temp.info = editInfo.text
         //temp.completed = completition.isOn
         //Task(info: "Hello", completed: 1, index: 0)
-        temp.addTask(obj: temp)
+        //temp.addTask(obj: temp)
         
-    }*/
+    }
 
+}
