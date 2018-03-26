@@ -13,7 +13,7 @@ import os.log
 class ListView: UITableViewController{
     var temp = Task()
     var list = [Task]()
-    
+    @IBOutlet weak var displaySwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,9 @@ class ListView: UITableViewController{
         if let savedLists = loadTasks() {
             list = savedLists
         }
-    }
+        //Disable User Switch
+        //displaySwitch.isEnabled = false
+        }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -48,6 +50,7 @@ class ListView: UITableViewController{
         let task = list[indexPath.row]
 
         cell.taskLabel.text = task.info
+        cell.statusSwitch.isEnabled = false
         cell.statusSwitch.setOn(task.status, animated: true)
         
         saveTasks()
