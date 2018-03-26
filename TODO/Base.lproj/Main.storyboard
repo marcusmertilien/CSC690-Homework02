@@ -37,30 +37,29 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="83" id="rD6-jB-58B" customClass="TaskCell" customModule="TODO" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rD6-jB-58B" id="77s-Pz-C1e">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rD6-jB-58B" id="77s-Pz-C1e">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWr-lW-YvQ">
-                                            <rect key="frame" x="16" y="12" width="250" height="59"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWr-lW-YvQ">
+                                            <rect key="frame" x="16" y="12" width="239" height="59"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djX-oD-xrX">
-                                            <rect key="frame" x="315" y="36" width="51" height="10"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djX-oD-xrX">
+                                            <rect key="frame" x="305" y="26" width="51" height="31"/>
                                         </switch>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="djX-oD-xrX" firstAttribute="top" secondItem="77s-Pz-C1e" secondAttribute="top" constant="36" id="0N6-Es-U0l"/>
-                                        <constraint firstItem="djX-oD-xrX" firstAttribute="leading" secondItem="QWr-lW-YvQ" secondAttribute="trailing" constant="224" id="7qR-pT-4CA"/>
-                                        <constraint firstItem="QWr-lW-YvQ" firstAttribute="top" secondItem="77s-Pz-C1e" secondAttribute="topMargin" constant="1" id="CAp-Ch-01g"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="djX-oD-xrX" secondAttribute="trailing" constant="5" id="N9F-Bb-WaZ"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="QWr-lW-YvQ" secondAttribute="bottom" constant="1" id="OrB-AJ-9D9"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="QWr-lW-YvQ" secondAttribute="bottom" constant="1" id="RMr-ps-1uQ"/>
                                         <constraint firstItem="QWr-lW-YvQ" firstAttribute="leading" secondItem="77s-Pz-C1e" secondAttribute="leadingMargin" id="UZl-Zb-Y6u"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="djX-oD-xrX" secondAttribute="trailing" constant="244" id="dE5-1E-vj1"/>
                                         <constraint firstItem="QWr-lW-YvQ" firstAttribute="top" secondItem="77s-Pz-C1e" secondAttribute="topMargin" constant="1" id="pPy-ZL-lkZ"/>
-                                        <constraint firstAttribute="bottom" secondItem="djX-oD-xrX" secondAttribute="bottom" constant="36.5" id="y6W-cc-j1k"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="djX-oD-xrX" secondAttribute="bottom" constant="15" id="psl-zY-TT2"/>
+                                        <constraint firstItem="djX-oD-xrX" firstAttribute="top" secondItem="77s-Pz-C1e" secondAttribute="topMargin" constant="15" id="twD-La-elG"/>
+                                        <constraint firstItem="djX-oD-xrX" firstAttribute="leading" secondItem="QWr-lW-YvQ" secondAttribute="trailing" constant="50" id="v0M-rS-bWx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -87,7 +86,7 @@
                 </toolbar>
                 <exit id="mnr-Hk-Sfe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-194.40000000000001" y="150.67466266866569"/>
+            <point key="canvasLocation" x="-551" y="117"/>
         </scene>
         <!--Edit View-->
         <scene sceneID="nxO-pR-Vk4">
@@ -105,7 +104,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="eYg-xM-jmN">
                                             <connections>
                                                 <action selector="cancel:" destination="p7G-iw-25Q" id="02b-ZK-lbD"/>
-                                                <segue destination="R6H-o8-6aM" kind="show" id="Bp4-EN-rTK"/>
+                                                <segue destination="R6H-o8-6aM" kind="show" identifier="cancelSegue" id="Bp4-EN-rTK"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="brG-JF-vPa">
@@ -132,7 +131,7 @@
                     <connections>
                         <outlet property="save" destination="brG-JF-vPa" id="HXw-vt-No3"/>
                         <outlet property="textView" destination="oqp-X3-IML" id="Tma-Bk-HyQ"/>
-                        <segue destination="mnr-Hk-Sfe" kind="unwind" unwindAction="editUnwindFor:sender:" id="efG-05-QPl"/>
+                        <segue destination="mnr-Hk-Sfe" kind="unwind" identifier="unwindSegue" unwindAction="editUnwindFor:sender:" id="efG-05-QPl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsR-8i-QRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
