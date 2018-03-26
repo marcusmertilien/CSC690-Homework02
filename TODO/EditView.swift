@@ -14,6 +14,7 @@ class EditView: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
 
     @IBOutlet weak var save: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var statusSwitch: UISwitch!
     
     var task: Task?
     
@@ -26,6 +27,7 @@ class EditView: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         
         if let task = task{
             textView.text = task.info
+            statusSwitch.setOn(task.status, animated: true)
         }
     }
     
@@ -64,7 +66,10 @@ class EditView: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         }
         
         let info = textView.text ?? ""
-        let status = false
+        var status = false
+        if statusSwitch.isOn{
+            status = true
+        }
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
         task = Task(info: info, status: status)

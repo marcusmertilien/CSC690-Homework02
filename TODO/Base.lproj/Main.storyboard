@@ -49,6 +49,9 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djX-oD-xrX">
                                             <rect key="frame" x="305" y="26" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="switchClicked:" destination="R6H-o8-6aM" eventType="valueChanged" id="c4S-88-kkC"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <constraints>
@@ -124,12 +127,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8E-q9-qou">
+                                <rect key="frame" x="163" y="503" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="czx-Hc-9eo"/>
                     </view>
                     <connections>
                         <outlet property="save" destination="brG-JF-vPa" id="HXw-vt-No3"/>
+                        <outlet property="statusSwitch" destination="T8E-q9-qou" id="SHu-Ov-3zz"/>
                         <outlet property="textView" destination="oqp-X3-IML" id="Tma-Bk-HyQ"/>
                         <segue destination="mnr-Hk-Sfe" kind="unwind" identifier="unwindSegue" unwindAction="editUnwindFor:sender:" id="efG-05-QPl"/>
                     </connections>
@@ -137,7 +145,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsR-8i-QRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="l5C-rc-P9y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="484" y="118"/>
+            <point key="canvasLocation" x="324" y="117"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

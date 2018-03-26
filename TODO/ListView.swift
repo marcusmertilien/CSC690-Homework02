@@ -14,10 +14,15 @@ class ListView: UITableViewController{
     var temp = Task()
     var list = [Task]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadSampleTasks()
+        //loadSampleTasks()
+        
+        if let savedLists = loadTasks() {
+            list = savedLists
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,9 +50,10 @@ class ListView: UITableViewController{
         cell.taskLabel.text = task.info
         cell.statusSwitch.setOn(task.status, animated: true)
         
+        saveTasks()
+        
         return cell
     }
-    
     
     
     
@@ -88,6 +94,7 @@ class ListView: UITableViewController{
     
     @IBAction func editUnwind(sender: UIStoryboardSegue){
         if let sourceViewController = sender.source as? EditView, let task = sourceViewController.task {
+            
             if let selectedIndexPath = tableView.indexPathForSelectedRow{
                 //Update an existing task
                 list[selectedIndexPath.row] = task
@@ -100,10 +107,24 @@ class ListView: UITableViewController{
                 list.append(task)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            saveTasks()
         }
     }
     
-        
+    private func saveTasks(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(list, toFile: Task.ArchiveURL.path)
+        if isSuccessfulSave{
+            os_log("Tasks successfully saved.", log: OSLog.default,type: .debug)
+        } else{
+            os_log("Failed to save lists...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadTasks() -> [Task]?{
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Task.ArchiveURL.path) as?
+        [Task]
+    }
+    
     
     
 }
