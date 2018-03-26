@@ -23,9 +23,7 @@ class ListView: UITableViewController{
         if let savedLists = loadTasks() {
             list = savedLists
         }
-        //Disable User Switch
-        //displaySwitch.isEnabled = false
-        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
