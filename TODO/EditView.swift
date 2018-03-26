@@ -20,6 +20,10 @@ class EditView: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        textView.delegate = self as? UITextViewDelegate
+        
+        //updateSaveButton()
+        
         if let task = task{
             textView.text = task.info
         }
@@ -29,9 +33,17 @@ class EditView: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         super.didReceiveMemoryWarning()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    private func textFieldDidBeginEditing(_ textView: UITextView){
+        //Disable the Save button while editing.
+        save.isEnabled = false
+    }
+    private func textFieldDidEndEditing(_ textField: UITextView) {
+        updateSaveButton()
+        navigationItem.title = textField.text
+    }
+    private func textFieldShouldReturn(_ textView: UITextView) -> Bool {
         // Hide the keyboard.
-        textField.resignFirstResponder()
+        textView.resignFirstResponder()
         return true
     }
     
@@ -40,6 +52,12 @@ class EditView: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         super.prepare(for: segue, sender: sender)
         
         // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === save else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        
         guard (sender as? UIBarButtonItem) != nil else {
             os_log("Something unforseable has gone wrong", log: OSLog.default, type: .debug)
             return
@@ -52,17 +70,29 @@ class EditView: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         task = Task(info: info, status: status)
     }
 
-    
-    @IBAction func Save(_ sender: Any) {
-        print("Hello World\n")
-        //weak var completition: UISwitch!
-       // weak var editInfo: UITextField!
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        //dismiss(animated: true, completion: nil)
         
-        //temp.info = editInfo.text
-        //temp.completed = completition.isOn
-        //Task(info: "Hello", completed: 1, index: 0)
-        //temp.addTask(obj: temp)
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
         
+        if isPresentingInAddMealMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+            fatalError("The MealViewController is not inside a navigation controller.")
+        }
     }
+
+    
+    private func updateSaveButton(){
+        //Disarm the save button if the text field is empty
+        let text = textView.text ?? ""
+        save.isEnabled = !text.isEmpty
+    }
+
 
 }

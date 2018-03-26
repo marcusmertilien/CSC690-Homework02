@@ -13,7 +13,6 @@ import os.log
 class ListView: UITableViewController{
     var temp = Task()
     var list = [Task]()
-    var addTask = AddView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +66,9 @@ class ListView: UITableViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
+            
         case "addTask":
             os_log("Adding a new task", log: OSLog.default, type: .debug)
-            let addVC =  segue.destination as! AddView
-            
             
         case "editTask":
             os_log("Edit a new task", log: OSLog.default, type: .debug)
@@ -83,11 +81,30 @@ class ListView: UITableViewController{
             let selectedTask = list[(indexPath?.row)!]
             editController.task = selectedTask
             
-            
          default:
             break
         }
     }
+    
+    @IBAction func editUnwind(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as? EditView, let task = sourceViewController.task {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                //Update an existing task
+                list[selectedIndexPath.row] = task
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                
+            }else{
+                // Add a new task.
+                let newIndexPath = IndexPath(row: list.count, section: 0)
+                
+                list.append(task)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+    }
+    
+        
+    
     
 }
 
